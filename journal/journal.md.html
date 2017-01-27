@@ -1,0 +1,36 @@
+﻿                  <meta charset="utf-8">
+                 **Development Journal**
+
+9/15/2016 1-4 (Lab)
+================================================
+Did svn checkout of 1-meshes lab.
+Wrote Draft of Report in 45 minutes.
+I tried to create a cube using the .off fiel type but could only make triangles insted of squares like I wanted:
+![bad cube](cube-error.jpg)
+Moved onto makeCylinder.  wrote the MVP for makeCylinder, but I'm only getting some of my triangels to actually show up on the sides of my cylinder.
+Created the functions 'makeHeightfield' and 'makeGlass'.  Need to fix it with guiPane since they are manly just the starter code added.
+
+9/19/2016 2-6:30
+================================================
+I was gone for the weekend, so this is the first time I ahve been able to work on graphics since Lab.
+Fixed my cube.off since I didn't realise that the order in which we list the veritices to create a face affected how the program would try to render the face, so once I paid attention to how I was listing the vertices that made up the faces, it worked.
+Fixed my makeCylinder once again by paying attention to how I was listing the vertices.  I also wasn't multiplying my x and z values on the circles by radius.  Finally, I fixed some math errors where I had things like ((i + 1 + vertices) % verticies*2) rather than (((i+1) % verticies) + verticies).
+Extended my makeCylinder to include height and radius parameters.
+Added a GUI called makeCylinder that allows a user to generate a cylinder with a given height and radius.  changed name of original make cylinder to createCylinder.
+Made an attempt at makeHeightfield, but it seems to be displaying upside down.
+Fixed makeHeightfield to not display upside down.  I was getting the right-hand rule mixed up, and  was able to fix it by changing some variables in my call to write the faces of the heightfield.
+Heightfield is now cutting off on some rectangular images and seems to be looping around since I can see part of it from below.
+Needed to switch how I was iterating through image height and width in order to make heightfield to stop looping around the bottom of itself.
+Finished makeHeightfield.
+Had a few problems with makeGlass, like creting the inside instead of the outside of the glass, but other wise very smooth sailing.
+![inverted cup with inside but no outside](see-through-cup.jpg)
+Finished makeGlass.
+
+9/19/2016 8-10
+================================================
+Commented and completed all programming portions of this weeks lab.
+Finished a Custom Scene for this weeks lab.
+Done with report and journal for this weeks lab.
+
+<!-- Markdeep: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace;}</style><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

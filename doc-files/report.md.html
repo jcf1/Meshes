@@ -1,0 +1,85 @@
+System Overview
+===================================================
+
+1. Algorithms
+
+    * In the cylinder, I have two 'for' loops that generate the verices that create the top and bottom of the cylinder using sine, cosine, the given radius, and the given height to specify the x, y, and z coordinates.  I then have two more 'for' loops that connect the points aligning the outside of the sphere to the middle point of the sphere through triangles by having a variable i I increment, and creating a trainangle containg that vertex, the middle vertex, and the vertex (i+1) % vertices in order to create a triangle between the first and last vertesx in the circle.  Finally, I have a 'for' loop connecting vertices of the top circle with the bottom one through rectangles.
+    
+    * In the heightfield, I have two doubly-nested 'for' loops.  The first is responsible for going through each pixel in the given picture and assigning a x, y, and z value for a vertex corralating to that pixel based on the two scales and the average color of that pixel.  The second then goes through those vertices and connects them in a series of rectangles abiding by the right-hand rule to construct a height map based on the colors in the picture.
+
+    * In the glass, I esentually just use the algorithms I used in the cylinder since the glass is really just a series of cylinders without solid tops or bottoms stacked ontop of each other with different dimensions, and then connected together.  Refer back to the cylinder algorithms for more information.
+
+2. Implementation
+
+    I made the makeCylinder method as a combination of it and a helper method, createCylinder. The function makeCylinder itself just allows the user to specify a radius and a height and passes this information to createCylinder.  createCylinder then uses that information and returns a String that is the contents of a off file for a cylinder object.  It does this through a series of for loops that are responsible for first figuring out the position of all the vertices that make up the top and bottom circles.  They then connect them in a series of triangles to make a solid top and bottom, and finally connect them top to bottom to add sides to the cylinder.
+
+    makeHeightfield takes a XZScale, YScale, and image from the user and constructs a heightfield object that resmbles that image based on the scales provided.  it does this by plcing a vertex down for each pixel in the picture, computing its height based on the average color value of that pixel in the picture, and then connecting all of the pixels in a series of rectangles while abiding by the right-hand rule.  makeGlass takes a number of circular slices and constructs a glass using that number as the number of vertices that make up the rings.  It keeps two arrays of floats, one is heights and the other is radius length, and constructs a series of rings of vertices using that information, along with the user-provided information, and connects them in a series of rectangles to create a wine glass-like object.
+
+Results
+===================================================
+3. Images w/ wireframe
+
+    ![Cube centered at 0 with 1m dimensions with wireframe](cube-wire.jpg)
+    ![Cylinder made with my makeCylinder method with wireframe](cylinder-wire.jpg)
+    ![Heightfield of the apple logo with wireframe](apple-heightfield-wire.jpg)
+    ![Glass generated with my makeGlass method with 100 slices](glass-wire.jpg)    
+
+
+
+4. Images w/o wireframe and description
+
+    ![Apple Heightfield without wireframe](apple-heightfield.jpg)
+    Here is an example of a heightfield of a very simple picture.  Jamie would be proud.
+
+    ![My Custom scene](beer-pong.jpg)
+    Here is a picture of my custom scene for this week.  I decided I would update my custom scene from last week since I can now create better circles.  I did not have enough time to spend a whole lot of time on it (like creating a better sphere or a good model for a solo cup), but I still like it.    
+
+    ![Image of custom heightfield](puppy-heightfield.jpg)
+    ![Image for custom heightfield](black-puppy.jpg)
+    
+    Here is a picture of my program producing a more complex heightfield.  I choose a puppy since I like them and I thought a dog would be an interesting image for my heightfield to try and produce.  I personally think it came out pretty well. I coose this image in particular since I believed the contrast in the picture would make for a particularly good heightfield.
+    
+Questions
+===================================================
+1. You could project the picture of whatever image you would like to reflect onto the reflective surface and then add noise inorder for the image to look as though it's being refected by the water or whatever reflective surface you want.
+
+2. Triangles are planar, convex, and simplex.  These facts give triangles the nice properties of being not self-intersecting, allows easy placement, and are easy to fuse/blend colors.
+
+3. I would try and take an average of a larger number of pixels in an image and figure out if there in mush variation in color in that area.  If there is, take smaller samples until all of them are uniform and create heights and triangles for them.  If there is not much variation, then we can probubly say that that area is going to be pretty flat relative to itself, so we can use less triangles in representing that space.
+
+Reflection
+====================================================
+I leaned a lot about the power of meshes and the power they have in being able to model real life shapes and objects using simple geometry shapes.  I also continued to brush up my C++ which I have wanted to do for a while, but only had one class that actually had us use it.  Finally, I got to relive my glory days where math class was simply geometry and trigonometry.  I had a lot of fun with this lab, I wish I hadn't been away for the weekend and could have done some cooler things with it.
+
+Workflow
+====================================================
+
+
+ Task                 | Description                                                |Planned Time(h)| Actual Time
+ ---------------------|------------------------------------------------------------|--------------:|------------:
+ Report Draft         | Formatted Markdeep document with placeholder text.         |     0.50      |   0.75
+ `cube.off` Draft | Buggy cube object.    |     0.25      |   0.75
+ `makeCylinder` Draft | Empty function with correct signature connected to GUI.    |     0.25      |   0.10
+ `makeCylinder` MVP   | `for` loops generating all correct vertices and possibly-buggy faces. |  0.50      |  0.75
+ `heightfield.off` Draft | Empty Method    |     0.10      | 0.10  
+ `glass.off` Draft    | Empty Method   |     0.10      |   0.10
+ custom Draft         | Simple scene with bugs   |     0.25      |    
+ Report MVP           | Probably-correct answers and quick screenshots.            |     0.50      |  
+ `heightfield.off` MVP | Simple heightfield with bugs    |     0.25      |   0.50
+ `glass.off` MVP    | Simple glass with bugs   |     0.25      |   0.50
+ custom MVP         | Simple scene with bugs   |     0.50      |    0.45
+ Total MVP          | Done with MVP            |     3.75      |  4.50
+ `cube.off` Polish | Perfect cube object.    |     0.10      |   0.10
+ `makeCylinder` Polish   | Method with GUI generating perfect cylinder. |  0.50      |  1.00
+ `heightfield.off` Polish | Method with GUI generating perfect heightfield.    |     0.50      | 1.00  
+ `glass.off` Polish    | Method with GUI generating perfect glass.   |     0.25      |   0.75
+ custom Polish         | Interesting custom scene.   |     0.25      |    0.50
+ Report Polish           | Good report.            |     0.50      |   0.75
+ Total Polish          | Done with Polish          |     5.85      |  8.10
+ [Table [tbl:workflow]: Project planning table.]
+
+I spent 7.50 hours this week on the required pats of the lab, and 0.60 hours on optional parts.
+4.50 hours to MVP, another 3.60 to Polish.
+
+<!-- Markdeep: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace;}</style><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

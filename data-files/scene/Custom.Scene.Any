@@ -1,0 +1,84 @@
+// -*- c++ -*-
+{
+    name = "Beer Pong";
+    
+    models = {
+       cup = ArticulatedModel::Specification {
+            filename = "model/glass.off";
+            preprocess = {
+                setMaterial(all(), Color3(1, 0, 0));
+            };
+       };
+       ball = ArticulatedModel::Specification {
+            filename = "model/ball.off";
+            preprocess = {
+                setMaterial(all(), Color3(1, 1, 1));
+            };
+       };
+    };
+    
+    entities = {
+       skybox = Skybox {
+            texture = "cubemap/noonclouds/noonclouds_*.png";
+       };
+
+        cube0 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+        };
+
+        cube1 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(-7, 0, 0, 0, 0, 0);
+        };
+
+        cube2 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(7, 0, 0, 0, 0, 0);
+        };
+
+        cube3 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(3.5, 0, 7, 0, 0, 0);
+        };
+
+         cube4 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(-3.5, 0, 7, 0, 0, 0);
+        };
+         
+        cube5 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 14, 0, 0, 0);
+        };
+
+        cube6 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(-3.5, 0, -7, 0, 0, 0);
+        };
+
+        cube7 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(3.5, 0, -7, 90, 0, 0);
+        };
+
+        cube8 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(10.5, 0, -7, 0, 0, 0);
+        };
+
+        cube9 = VisibleEntity {
+            model = "cup";
+            frame = CFrame::fromXYZYPRDegrees(-10.5, 0, -7, 0, 0, 0);
+        };
+
+        cube10 = VisibleEntity {
+            model = "ball";
+            frame = CFrame::fromXYZYPRDegrees(4, 18, 0, 0, 0, 0);
+        };
+
+        camera = Camera {
+            frame = CFrame::fromXYZYPRDegrees(-11, 16.5, 9.4, -46.0, -43.5);
+        };
+    };
+};

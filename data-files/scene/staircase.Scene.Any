@@ -1,0 +1,222 @@
+{
+ name = staircase;
+models = {
+stair = ArticulatedModel::Specification {
+filename = "model/crate/crate.obj";
+preprocess = {
+setMaterial(all(), "wood-texture.jpg");
+transformGeometry(all(), Matrix4::scale(0.5, 0.2, 1.0));
+transformGeometry(all(), Matrix4::translation(0, 0, 1.0));
+};
+};
+};
+ entities = {
+skybox = Skybox {
+texture = "cubemap/whiteroom/whiteroom-*.png";
+};
+stair0 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 0.000000,0 ,0, 0, 0);
+};
+stair1 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 0.200000,0 ,20, 0, 0);
+};
+stair2 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 0.400000,0 ,40, 0, 0);
+};
+stair3 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 0.600000,0 ,60, 0, 0);
+};
+stair4 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 0.800000,0 ,80, 0, 0);
+};
+stair5 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 1.000000,0 ,100, 0, 0);
+};
+stair6 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 1.200000,0 ,120, 0, 0);
+};
+stair7 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 1.400000,0 ,140, 0, 0);
+};
+stair8 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 1.600000,0 ,160, 0, 0);
+};
+stair9 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 1.800000,0 ,180, 0, 0);
+};
+stair10 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 2.000000,0 ,200, 0, 0);
+};
+stair11 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 2.200000,0 ,220, 0, 0);
+};
+stair12 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 2.400000,0 ,240, 0, 0);
+};
+stair13 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 2.600000,0 ,260, 0, 0);
+};
+stair14 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 2.800000,0 ,280, 0, 0);
+};
+stair15 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 3.000000,0 ,300, 0, 0);
+};
+stair16 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 3.200000,0 ,320, 0, 0);
+};
+stair17 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 3.400000,0 ,340, 0, 0);
+};
+stair18 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 3.600000,0 ,0, 0, 0);
+};
+stair19 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 3.800000,0 ,20, 0, 0);
+};
+stair20 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 4.000000,0 ,40, 0, 0);
+};
+stair21 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 4.200000,0 ,60, 0, 0);
+};
+stair22 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 4.400000,0 ,80, 0, 0);
+};
+stair23 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 4.600000,0 ,100, 0, 0);
+};
+stair24 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 4.800000,0 ,120, 0, 0);
+};
+stair25 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 5.000000,0 ,140, 0, 0);
+};
+stair26 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 5.200000,0 ,160, 0, 0);
+};
+stair27 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 5.400000,0 ,180, 0, 0);
+};
+stair28 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 5.600000,0 ,200, 0, 0);
+};
+stair29 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 5.800000,0 ,220, 0, 0);
+};
+stair30 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 6.000000,0 ,240, 0, 0);
+};
+stair31 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 6.200000,0 ,260, 0, 0);
+};
+stair32 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 6.400000,0 ,280, 0, 0);
+};
+stair33 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 6.600000,0 ,300, 0, 0);
+};
+stair34 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 6.800000,0 ,320, 0, 0);
+};
+stair35 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 7.000000,0 ,340, 0, 0);
+};
+stair36 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 7.200000,0 ,0, 0, 0);
+};
+stair37 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 7.400000,0 ,20, 0, 0);
+};
+stair38 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 7.600000,0 ,40, 0, 0);
+};
+stair39 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 7.800000,0 ,60, 0, 0);
+};
+stair40 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 8.000000,0 ,80, 0, 0);
+};
+stair41 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 8.200000,0 ,100, 0, 0);
+};
+stair42 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 8.400000,0 ,120, 0, 0);
+};
+stair43 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 8.600000,0 ,140, 0, 0);
+};
+stair44 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 8.800000,0 ,160, 0, 0);
+};
+stair45 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 9.000000,0 ,180, 0, 0);
+};
+stair46 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 9.200000,0 ,200, 0, 0);
+};
+stair47 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 9.400000,0 ,220, 0, 0);
+};
+stair48 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 9.600000,0 ,240, 0, 0);
+};
+stair49 = VisibleEntity {
+model = "stair";
+frame = CFrame::fromXYZYPRDegrees(0, 9.800000,0 ,260, 0, 0);
+};
+camera = Camera {
+frame = CFrame::fromXYZYPRDegrees(0, 0, 5);
+};
+};
+};
+ 
